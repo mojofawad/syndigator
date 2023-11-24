@@ -1,0 +1,41 @@
+@page "/Feed"
+@using Syndigator.Shared.Services
+@rendermode InteractiveServer
+@inject FeedService FeedService
+
+<h3>Feed</h3>
+
+<PageTitle>Feed</PageTitle>
+
+<h1>RSS Data</h1>
+
+Test RSS Feed
+
+<input placeholder="Enter url here" @bind="feedUrl"/>
+<button @onclick="LoadFeed">Submit</button>
+
+@if (feedItems != null)
+{
+    <ul>
+        @foreach (var item in feedItems)
+        {
+            <li>
+                <a href="@item.Link" target="_blank">@item.Title</a>
+                - @item.PublishDate.ToShortDateString();
+            </li>
+        }
+    </ul>
+}
+
+
+@code {
+    private string feedUrl;
+    private List<FeedItem> feedItems;
+
+    private void LoadFeed()
+    {
+        feedItems = FeedService.ParseFeed(feedUrl);
+    }
+
+
+}
