@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\mojofawad\src\mojofawad.Shared.Domain\mojofawad.Shared.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

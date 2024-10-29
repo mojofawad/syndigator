@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Syndigator.Feeds.Domain\Syndigator.Feeds.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
